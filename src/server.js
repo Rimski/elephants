@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 app.use("/", authroutes);
 app.use("/api", expressJwt({secret: config.secret}));
 app.use("/api", elephantroutes);
-//app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.listen(port, function() {
     console.log("TURN DOWN THE WHAT? " + port)
